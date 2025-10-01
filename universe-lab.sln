@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniverseLab", "UniverseLab\UniverseLab.csproj", "{FB93EA85-3318-46A7-9439-3A94E7490007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{27221935-9DEB-4CCB-85E4-CD9FD7B3B548}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "Migrations\Migrations.csproj", "{D3E054B9-316C-43D9-83D1-A38296F7C49E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FB93EA85-3318-46A7-9439-3A94E7490007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB93EA85-3318-46A7-9439-3A94E7490007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB93EA85-3318-46A7-9439-3A94E7490007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB93EA85-3318-46A7-9439-3A94E7490007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27221935-9DEB-4CCB-85E4-CD9FD7B3B548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27221935-9DEB-4CCB-85E4-CD9FD7B3B548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27221935-9DEB-4CCB-85E4-CD9FD7B3B548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27221935-9DEB-4CCB-85E4-CD9FD7B3B548}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
