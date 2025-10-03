@@ -17,6 +17,10 @@ builder.Services.Configure<RabbitMqSettings>(builder.Configuration.GetSection(na
 
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
+
+builder.Services.AddScoped<IAuditLogOrderRepository, AuditLogOrderRepository>();
+
+builder.Services.AddScoped<AuditLogService>();
 builder.Services.AddScoped<OrderService>();
 builder.Services.AddScoped<RabbitMqService>();
 
