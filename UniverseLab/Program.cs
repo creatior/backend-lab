@@ -1,8 +1,10 @@
 using Dapper;
+using FluentValidation;
 using universe_lab.BLL.Services;
 using universe_lab.DAL;
 using universe_lab.DAL.Interfaces;
 using universe_lab.DAL.Repositories;
+using universe_lab.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,9 @@ builder.Services.Configure<DbSettings>(builder.Configuration.GetSection(nameof(D
 builder.Services.AddScoped<IOrderRepository, OrderRepository>();
 builder.Services.AddScoped<IOrderItemRepository, OrderItemRepository>();
 builder.Services.AddScoped<OrderService>();
+
+builder.Services.AddValidatorsFromAssemblyContaining(typeof(Program));
+builder.Services.AddScoped<ValidatorFactory>();
 
 // зависимость, которая автоматически подхватывает все контроллеры в проекте
 builder.Services.AddControllers();
