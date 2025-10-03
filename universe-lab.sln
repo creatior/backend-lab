@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Migrations", "Migrations\Migrations.csproj", "{D3E054B9-316C-43D9-83D1-A38296F7C49E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniverseLab.Common", "UniverseLab.Common\UniverseLab.Common.csproj", "{1D021E97-AAEA-40FF-B85F-428AB5F5A9B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniverseLab.Messages", "UniverseLab.Messages\UniverseLab.Messages.csproj", "{346F1EE9-4744-4DE2-8F87-EAB38760844F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3E054B9-316C-43D9-83D1-A38296F7C49E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D021E97-AAEA-40FF-B85F-428AB5F5A9B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D021E97-AAEA-40FF-B85F-428AB5F5A9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D021E97-AAEA-40FF-B85F-428AB5F5A9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D021E97-AAEA-40FF-B85F-428AB5F5A9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
