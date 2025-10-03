@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniverseLab.Common", "Unive
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniverseLab.Messages", "UniverseLab.Messages\UniverseLab.Messages.csproj", "{346F1EE9-4744-4DE2-8F87-EAB38760844F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consumer", "Consumer\Consumer.csproj", "{A1CD1133-8228-4BEA-8967-0585937A6BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{346F1EE9-4744-4DE2-8F87-EAB38760844F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1CD1133-8228-4BEA-8967-0585937A6BEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1CD1133-8228-4BEA-8967-0585937A6BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1CD1133-8228-4BEA-8967-0585937A6BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1CD1133-8228-4BEA-8967-0585937A6BEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -8,7 +8,7 @@ using universe_lab.Validators;
 
 namespace universe_lab.Controllers.V1;
 
-[Route("api/v1/audit-log")]
+[Route("api/v1/audit/log-order")]
 public class AuditLogController(AuditLogService auditLogService, ValidatorFactory validatorFactory) : ControllerBase
 {
     [HttpPost("batch-create")]
