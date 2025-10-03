@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Dapper;
 using FluentValidation;
 using universe_lab.BLL.Services;
@@ -29,10 +28,7 @@ builder.Services.AddValidatorsFromAssemblyContaining(typeof(Program));
 builder.Services.AddScoped<ValidatorFactory>();
 
 // зависимость, которая автоматически подхватывает все контроллеры в проекте
-builder.Services.AddControllers().AddJsonOptions(options => 
-{
-    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower;
-});
+builder.Services.AddControllers();
 // добавляем swagger
 builder.Services.AddSwaggerGen();
 
