@@ -1,11 +1,14 @@
+using Microsoft.Extensions.Options;
 using universe_lab.BLL.Models;
+using universe_lab.Config;
 using universe_lab.DAL;
 using universe_lab.DAL.Interfaces;
 using universe_lab.DAL.Models;
+using UniverseLab.Messages;
 
 namespace universe_lab.BLL.Services;
 
-public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepository, IOrderItemRepository orderItemRepository)
+public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepository, IOrderItemRepository orderItemRepository, RabbitMqService rabbitMqService, IOptions<RabbitMqSettings> settings)
 {
     /// <summary>
     /// Метод создания заказов
@@ -51,6 +54,19 @@ public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepositor
             await transaction.CommitAsync(token);
             
             var orderItemLookup = orderItems.ToLookup(x => x.OrderId);
+            
+            var messages = orders.Select(order => new OrderCreatedMessage
+            {
+                Id = order.Id,
+                CustomerId = order.CustomerId,
+                DeliveryAddress = order.DeliveryAddress,
+                TotalPriceCents = order.TotalPriceCents,
+                TotalPriceCurrency = order.TotalPriceCurrency,
+                CreatedAt = order.CreatedAt,
+                UpdatedAt = order.UpdatedAt
+            }).ToArray();
+            
+            await rabbitMqService.Publish(messages, settings.Value.OrderCreatedQueue, token);
             return Map(orders, orderItemLookup);
         }
         catch (Exception e) 
