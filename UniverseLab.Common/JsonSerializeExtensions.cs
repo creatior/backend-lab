@@ -11,7 +11,7 @@ public static class JsonSerializeExtensions
         Formatting = Formatting.Indented,
         ContractResolver = new DefaultContractResolver
         {
-            NamingStrategy = new SnakeCaseNamingStrategy(),
+            NamingStrategy = new CamelCaseNamingStrategy(),
         },
         NullValueHandling = NullValueHandling.Ignore,
         Converters = new List<JsonConverter>

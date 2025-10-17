@@ -1,5 +1,5 @@
 using Microsoft.Extensions.Options;
-using universe_lab.BLL.Models;
+using Models.Dto.Common;
 using universe_lab.Config;
 using universe_lab.DAL;
 using universe_lab.DAL.Interfaces;
@@ -63,7 +63,21 @@ public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepositor
                 TotalPriceCents = order.TotalPriceCents,
                 TotalPriceCurrency = order.TotalPriceCurrency,
                 CreatedAt = order.CreatedAt,
-                UpdatedAt = order.UpdatedAt
+                UpdatedAt = order.UpdatedAt,
+                OrderItems = (orderItemLookup?[order.Id] ?? Enumerable.Empty<V1OrderItemDal>())
+                    .Select(item => new OrderItemUnit
+                    {
+                        Id = item.Id,
+                        OrderId = item.OrderId,
+                        ProductId = item.ProductId,
+                        Quantity = item.Quantity,
+                        ProductTitle = item.ProductTitle,
+                        ProductUrl = item.ProductUrl,
+                        PriceCents = item.PriceCents,
+                        PriceCurrency = item.PriceCurrency,
+                        CreatedAt = item.CreatedAt,
+                        UpdatedAt = item.UpdatedAt
+                    }).ToArray()
             }).ToArray();
             
             await rabbitMqService.Publish(messages, settings.Value.OrderCreatedQueue, token);
@@ -79,7 +93,7 @@ public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepositor
     /// <summary>
     /// Метод получения заказов
     /// </summary>
-    public async Task<OrderUnit[]> GetOrders(QueryOrderItemsModel model, CancellationToken token)
+    public async Task<OrderUnit[]> GetOrders(Models.QueryOrderItemsModel model, CancellationToken token)
     {
         var orders = await orderRepository.Query(new QueryOrdersDalModel
         {

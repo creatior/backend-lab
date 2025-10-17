@@ -46,7 +46,10 @@ public class OmsOrderCreatedConsumer : IHostedService
             var message = Encoding.UTF8.GetString(body);
             var order = message.FromJson<OrderCreatedMessage>();
 
-            Console.WriteLine("Received: " + message);
+            foreach (var item in order.OrderItems)
+            {
+                Console.WriteLine($"Sending to OMS -> OrderId: {order.Id}, OrderItemId: {item.Id}, CustomerId: {order.CustomerId}, Status: Created");
+            }
             
             using var scope = _serviceProvider.CreateScope();
             var client = scope.ServiceProvider.GetRequiredService<OmsClient>();

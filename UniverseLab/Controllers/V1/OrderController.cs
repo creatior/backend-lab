@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Models.Dto.V1.Requests;
 using Models.Dto.V1.Responses;
-using universe_lab.BLL.Models;
+using Models.Dto.Common;
 using universe_lab.BLL.Services;
 using universe_lab.Validators;
 
@@ -51,7 +51,8 @@ public class OrderController(OrderService orderService, ValidatorFactory validat
         {
             return BadRequest(validationResult.ToDictionary());
         }
-        var res = await orderService.GetOrders(new QueryOrderItemsModel
+
+        var res = await orderService.GetOrders(new BLL.Models.QueryOrderItemsModel
         {
             Ids = request.Ids,
             CustomerIds = request.CustomerIds,
