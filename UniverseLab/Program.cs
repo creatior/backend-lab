@@ -5,6 +5,7 @@ using universe_lab.Config;
 using universe_lab.DAL;
 using universe_lab.DAL.Interfaces;
 using universe_lab.DAL.Repositories;
+using universe_lab.Jobs;
 using universe_lab.Validators;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -31,6 +32,8 @@ builder.Services.AddScoped<ValidatorFactory>();
 builder.Services.AddControllers();
 // добавляем swagger
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddHostedService<OrderGenerator>();
 
 // собираем билдер в приложение
 var app = builder.Build();

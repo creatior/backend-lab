@@ -1,4 +1,4 @@
-namespace universe_lab.BLL.Models;
+namespace Models.Dto.Common;
 
 public class QueryOrderItemsModel
 {

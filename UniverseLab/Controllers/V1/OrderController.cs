@@ -52,7 +52,7 @@ public class OrderController(OrderService orderService, ValidatorFactory validat
             return BadRequest(validationResult.ToDictionary());
         }
 
-        var res = await orderService.GetOrders(new BLL.Models.QueryOrderItemsModel
+        var res = await orderService.GetOrders(new QueryOrderItemsModel
         {
             Ids = request.Ids,
             CustomerIds = request.CustomerIds,

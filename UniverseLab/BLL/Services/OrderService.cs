@@ -93,7 +93,7 @@ public class OrderService(UnitOfWork unitOfWork, IOrderRepository orderRepositor
     /// <summary>
     /// Метод получения заказов
     /// </summary>
-    public async Task<OrderUnit[]> GetOrders(Models.QueryOrderItemsModel model, CancellationToken token)
+    public async Task<OrderUnit[]> GetOrders(QueryOrderItemsModel model, CancellationToken token)
     {
         var orders = await orderRepository.Query(new QueryOrdersDalModel
         {
