@@ -14,7 +14,7 @@ public class OrderGenerator(IServiceProvider serviceProvider): BackgroundService
         
         while (!stoppingToken.IsCancellationRequested)
         {
-            var orders = Enumerable.Range(1, 10)
+            var orders = Enumerable.Range(1, 50)
                 .Select(_ =>
                 {
                     var orderItem = fixture.Build<OrderItemUnit>()
